@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightseagreen;
+}
+
+#container{
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    border-radius: 3%;
+    overflow: hidden;
+}
+
+#container img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#container i{
+    position: absolute;
+    color: white;
+    font-size: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition-duration: 1s;
+}
+
+#container i.active{
+    transform: translate(-50%, -50%) scale(1)
+}
