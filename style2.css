@@ -14,13 +14,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightseagreen;
+    background-color: black;
+    color: #fff;
+    overflow: hidden;
 }
 
-#container{
-    height: 400px;
-    width: 300px;
-    background-color: white;
-    border-radius: 3%;
-    overflow: hidden;
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container .cursor i{
+    height: 18.4px;
+    width: 18px;
+    color: yellow;
+    font-size: 25px;
+    position: absolute;
+    mix-blend-mode: difference;
+    transition: all linear 0.2s;
 }
