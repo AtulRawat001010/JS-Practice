@@ -27,7 +27,7 @@ body{
 
 #container img{
     position: relative;
-    height: 100%;
+    height: 90%;
     width: 100%;
     object-fit: cover;
 }
@@ -39,9 +39,40 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition-duration: 1s;
+    transition: 0.4s ease;
+    /* opacity: 0; */
 }
 
-#container i.active{
+/* #container i.active{
     transform: translate(-50%, -50%) scale(1)
+} */
+
+.this{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 11%;
+    width: 100%;
+    margin-top: -2%;
+    /* border: 1px solid red; */
+}
+
+.this #likeBtn{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: #111;
+    cursor: pointer;
+    border: none;
+}
+
+.likeCount{
+    height: 100%;
+    width: 100%;
+    border: 2% solid black;
+    background-color:#111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
