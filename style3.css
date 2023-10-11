@@ -14,16 +14,100 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: #fff;
+    background-color: #428ca5;
+    color: white;
     overflow: hidden;
+    position: relative;
 }
 
 .container{
+    height: 70%;
+    width: 20%;
+    position: relative;
+    background-color: #fff;
+    color: #428ca5;
+    border-radius: 2%;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.stories{
+    height: 120px;
+    width: 100%;
+    /* background-color: rgb(81, 141, 239); */
+    padding: 2.5%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.8%;
+    white-space: nowrap;
+    border-bottom: 1px solid #ededed;
+}
+
+.story{
+    width: 90px;
+    height: 90px;
+    border: 3px solid red;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.story img{
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    object-fit: cover;
 }
+
+
+
+
+/* @media (max-width:1215px) {
+    .container{
+        height: 550px;
+        width: 280px;
+        position: relative;
+        background-color: #fff;
+        color: #428ca5;
+        border-radius: 3%;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+    .stories{
+        height: 100px;
+        width: 100%;
+        padding: 2%;
+    }
+    
+    .story{
+        height: 70px;
+    border: 3px solid red;
+    border-radius: 50%;
+    width: 70px;
+    }
+} */
+
+
+/* @media (max-width:760px) {
+    .container{
+        height: vmin;
+        width: vmax;
+        position: relative;
+        background-color: #fff;
+        color: #428ca5;
+        border-radius: 3%;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+    .stories{
+        height: 100px;
+        width: 100%;
+        padding: 2%;
+    }
+    
+    .story{
+        height: 70px;
+    border: 3px solid red;
+    border-radius: 50%;
+    width: 70px;
+    }
+} */
