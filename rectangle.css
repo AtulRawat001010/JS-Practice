@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: cornflowerblue; */
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+    font-size: larger;
+    font-weight: 700;
+    font-family: cursive;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+.rectangle{
+    height: 300px;
+    width: 800px;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid black;
+}
