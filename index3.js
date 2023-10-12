@@ -1,5 +1,6 @@
 let con = document.querySelector(".container");
 let stories = document.querySelector(".stories");
+let showStory = document.querySelector(".showStory");
 
 let arr = [
     {dp:"https://rukminim2.flixcart.com/image/312/312/xif0q/keyboard/gaming-keyboard/f/p/k/it-kb331-intex-original-imagmgwzzxn2m3pu.jpeg?q=70",
@@ -32,7 +33,7 @@ arr.forEach((element, index) => {
 stories.innerHTML = clut;
 
 stories.addEventListener("click", (e)=> {
-    let showStory = document.querySelector(".showStory");
+    // let showStory = document.querySelector(".showStory");
     console.log(e.target.id);
     console.log(arr[e.target.id].story);
     showStory.style.backgroundImage = `url(${arr[e.target.id].story})`;
@@ -40,4 +41,8 @@ stories.addEventListener("click", (e)=> {
     setTimeout(() => {
         showStory.style.display = "none";
     }, 2000);
+})
+
+showStory.addEventListener("click", ()=>{
+    showStory.style.display = "none";
 })
