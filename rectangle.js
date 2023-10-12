@@ -3,12 +3,12 @@ let header = document.querySelector("header");
 // let rect2 = document.querySelector(".rectangle2");
 
 rect.addEventListener("mousemove", (e)=> {
-    console.log(e);
+    console.log(e);  //mouse Events or pointer events Will be printed.
 
-    console.log(rect.getBoundingClientRect());
+    console.log(rect.getBoundingClientRect()); //to get the location of an element on Dom.
     let rectLocation = rect.getBoundingClientRect();
 
-    console.log(rectLocation.width);
+    console.log(rectLocation.width); //to see the Width of the element.
 
     let mouseLocationNow = parseInt(e.clientX - rectLocation.left);
 
