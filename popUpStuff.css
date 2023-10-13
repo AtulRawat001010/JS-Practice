@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.center{
+    font-size: 45px;
+    position: relative;
+    height: 60%;
+    width: 60%;
+    padding: 30px;
+    text-align: center;
+}
+
+.imagediv{
+    position: absolute;
+    height: 120px;
+    width: 80px;
+    display: none;
+    overflow: hidden;
+}
+
+.imagediv img{
+    transform: translateY(100%);
+    transition: .6s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
