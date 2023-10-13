@@ -67,7 +67,7 @@ document.querySelector(".center").addEventListener("mousemove", throttleFunction
     setTimeout(() => {
         div1.remove();
     }, 2000);
-}, 300));
+}, 1000));
 
 
 // OR==>
