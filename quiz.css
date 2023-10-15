@@ -30,10 +30,25 @@ body{
     flex-direction: column;
 }
 
+h2{
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
 ul{
     list-style: none;
     padding: 0;
     margin-left: 0.8rem;
+}
+
+ul li{
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+ul li label{
+    cursor: pointer;
 }
 
 button{
