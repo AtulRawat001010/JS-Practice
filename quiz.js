@@ -74,7 +74,7 @@ function getSelected(){
     answers.forEach(answer => {
         if(answer.checked){
            ans = answer.id;
-           console.log(ans);
+        //    console.log(ans);
         }
     });
 
