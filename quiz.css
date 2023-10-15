@@ -67,3 +67,6 @@ button:hover{
     cursor: pointer;
     transition: 2s;
 }
+button:focus{
+    background-color: #340b46;
+}

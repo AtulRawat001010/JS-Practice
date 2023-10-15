@@ -89,7 +89,20 @@ function deselected(){
 
 
 submit.addEventListener("click", ()=>{
-    
+    // submit.style.transform = "translateX(2%)";
+
+    setTimeout(() => {
+        // submit.style.transform = "translateX(-2%)"
+        submit.style.transform = "scale(0.5)"
+        submit.style.transitionDuration = "0.4s"
+    }, 0);
+
+    setTimeout(() => {
+        // submit.style.transform = "translateX(0)"
+        submit.style.transform = "scale(1)"
+        submit.style.transitionDuration = "0.5s"
+    }, 50);
+
     const answer = getSelected();
 
     if(answer){
