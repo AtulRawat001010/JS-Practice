@@ -10,7 +10,7 @@ init();
 function init() {
         countdown();
         setInterval(countdown, 1000);
-}
+};
 
 function countdown() {
     const nydate = new Date(ny);
@@ -28,8 +28,8 @@ function countdown() {
     hourEl.innerText = formatTime(hours);
     minEl.innerText = formatTime(minutes);
     secEl.innerText = formatTime(seconds);
-}
+};
 
 function formatTime(time) {
     return time < 10 ? `0${time}` : time;
-}
+};
