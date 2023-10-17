@@ -1,4 +1,4 @@
-const ny = "12 Mar 2024";
+const ny = "1 Jan 2024";
 
 let dayEl = document.querySelector("#days");
 let hourEl = document.querySelector("#hour");
@@ -21,7 +21,7 @@ function countdown() {
     const hours = Math.floor(totalSeconds / 3600) % 24;
     const minutes = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds % 60);
-
+    
     // console.log(days, hours, minutes, seconds);
 
     dayEl.innerText = formatTime(days);
