@@ -2,8 +2,8 @@ const ny = "12 Mar 2024";
 
 let dayEl = document.querySelector("#days");
 let hourEl = document.querySelector("#hour");
-let minEl = document.querySelector("#min")
-let secEl = document.querySelector("#sec")
+let minEl = document.querySelector("#min");
+let secEl = document.querySelector("#sec");
 
 init();
 
