@@ -86,7 +86,7 @@ function addMealsToLS(mealId) {
     const mealIds = getMealsFromLS();
 
     localStorage.setItem("mealIds", JSON.stringify([...mealIds, mealId]));
-}
+};
 
 
 
@@ -94,7 +94,7 @@ function removeMealsFromLS(mealId) {
     const mealIds = getMealsFromLS();
 
     localStorage.setItem("mealIds", JSON.stringify(mealIds.filter(id => id !== mealId)));
-}
+};
 
 
 
