@@ -144,12 +144,12 @@ function addMealToFav(mealData) {
     favMeal.addEventListener("mouseenter", ()=> {
         let favMealNameSpan = favMeal.querySelector(".favMealNameSpan");
         favMealNameSpan.innerText = mealData.strMeal;
-    })
+    });
 
     favMeal.addEventListener("mouseleave", ()=> {
         let favMealNameSpan = favMeal.querySelector(".favMealNameSpan");
         favMealNameSpan.innerText = newName[0];
-    })
+    });
 
 
     const closeBtn = favMeal.querySelector(".close");
