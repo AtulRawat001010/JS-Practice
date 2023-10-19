@@ -1,11 +1,13 @@
 let container = document.querySelector(".container");
-
+let favMeals_container = document.querySelector("#fav-meals");
+let favMeals_containerH3 = document.querySelector("h3");
 let meals = document.querySelector("#meals");
-
-// let fav = false;
+let inputField = document.querySelector("#inputField");
+let searchBtn = document.querySelector("#search");
 
 getRandomMeal();
-// fethcFavMeals();
+fetchFavMeals();
+
 
 
 
@@ -20,13 +22,13 @@ async function getRandomMeal(){
 }
 
 
+async function getMealById(id) {
+    const resp = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+    );
 
-
-async function getMealById(id){
-    const res = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?l="+id);
-
-    const data = await res.json();
-    const meal = data.meals[0];
+    const respData = await resp.json();
+    const meal = respData.meals[0];
 
     return meal;
 }
@@ -34,14 +36,13 @@ async function getMealById(id){
 
 
 async function getMealBySearch(term){
-    const res = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s="+term);
+    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
 
     const data = await res.json();
-    const meals = data.meals[0];
+    const meals = data.meals;
 
     return meals;
 }
-
 
 
 
@@ -72,6 +73,8 @@ function addMeal(mealData, random = false) {
                 addMealsToLS(mealData.idMeal);
                 fav_btn.classList.add("active");
             }
+
+            fetchFavMeals();
         });
 
     meals.appendChild(meal);
@@ -102,14 +105,97 @@ function getMealsFromLS() {
 }
 
 
-async function fethcFavMeals() {
+
+async function fetchFavMeals() {
+    // clean the container
+    favMeals_container.innerHTML = "";
+
     const mealIds = getMealsFromLS();
+    // const mealsArr = [];
 
     for (let i = 0; i < mealIds.length; i++) {
         const mealId = mealIds[i];
-
         let meal = await getMealById(mealId);
-        
+
+        // mealsArr.push(meal);
         addMealToFav(meal);
+    }
+
+    // console.log(mealsArr);
+}
+
+
+
+function addMealToFav(mealData) {
+
+    const favMeal = document.createElement("li");
+    const slicedMealName = mealData.strMeal;
+
+    const newName = slicedMealName.split(" ");
+
+    favMeal.innerHTML = 
+    `
+        <img src="${mealData.strMealThumb}" alt="${newName[0]}">
+        <span class="favMealNameSpan">${newName[0]}</span>
+        <button class="close"><i class='bx bx-window-close'></i></button>
+    `;
+
+
+    favMeal.addEventListener("mouseenter", ()=> {
+        let favMealNameSpan = favMeal.querySelector(".favMealNameSpan");
+        favMealNameSpan.innerText = mealData.strMeal;
+    })
+
+    favMeal.addEventListener("mouseleave", ()=> {
+        let favMealNameSpan = favMeal.querySelector(".favMealNameSpan");
+        favMealNameSpan.innerText = newName[0];
+    })
+
+
+    const closeBtn = favMeal.querySelector(".close");
+
+    closeBtn.addEventListener("click", () => {
+        removeMealsFromLS(mealData.idMeal);
+
+        fetchFavMeals();
+    });
+
+    favMeals_container.appendChild(favMeal);
+}
+
+
+searchBtn.addEventListener("click", async ()=> {
+    const search = inputField.value;
+
+    const mealBySearch = await getMealBySearch(search);
+
+    mealBySearch.forEach(meal => {
+        addMeal(meal);
+    });
+});
+
+
+
+
+
+
+
+
+
+let x = window.matchMedia("(max-height: 1500px), (max-width: 1500px)");
+myFunction(x);
+x.addEventListener("scroll", myFunction);
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        window.onscroll = ()=>{
+            favMeals_containerH3.classList.remove("active");
+            favMeals_container.style.marginTop = "0";
+        }
+    }
+
+    else{
+        favMeals_containerH3.classList.add("active");
+        favMeals_container.style.marginTop = "3500px";
     }
 }
