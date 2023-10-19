@@ -102,7 +102,7 @@ function getMealsFromLS() {
     const mealIds = JSON.parse(localStorage.getItem("mealIds"));
 
     return mealIds === null ? [] : mealIds;
-}
+};
 
 
 
@@ -122,7 +122,7 @@ async function fetchFavMeals() {
     }
 
     // console.log(mealsArr);
-}
+};
 
 
 
@@ -161,7 +161,7 @@ function addMealToFav(mealData) {
     });
 
     favMeals_container.appendChild(favMeal);
-}
+};
 
 
 searchBtn.addEventListener("click", async ()=> {
