@@ -19,7 +19,7 @@ async function getRandomMeal(){
     console.log(randomMeal);
 
     addMeal(randomMeal, true);
-}
+};
 
 
 async function getMealById(id) {
@@ -31,7 +31,7 @@ async function getMealById(id) {
     const meal = respData.meals[0];
 
     return meal;
-}
+};
 
 
 
@@ -42,7 +42,7 @@ async function getMealBySearch(term){
     const meals = data.meals;
 
     return meals;
-}
+};
 
 
 
@@ -78,7 +78,7 @@ function addMeal(mealData, random = false) {
         });
 
     meals.appendChild(meal);
-}
+};
 
 
 
