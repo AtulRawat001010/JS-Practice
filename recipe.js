@@ -161,7 +161,7 @@ function addMealToFav(mealData) {
     });
 
     favMeals_container.appendChild(favMeal);
-}
+};
 
 
 searchBtn.addEventListener("click", async ()=> {
