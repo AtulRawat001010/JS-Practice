@@ -210,11 +210,11 @@ function updateMealInfo(mealData) {
          <ul>
             ${ingredient.map((ing) => `<li>${ing}</li>`).join("")}
          </ul>
-        `
+        `;
 
     dataHereMealInfo.appendChild(mealNewDiv);
 
-    popup.style.scale = "1";
+    popup.style.scale = "1"
 };
 
 
