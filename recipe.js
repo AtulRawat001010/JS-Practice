@@ -196,7 +196,7 @@ function updateMealInfo(mealData) {
         else{
             break;
         }
-    }
+    };
 
     dataHereMealInfo.innerHTML = "";
 
