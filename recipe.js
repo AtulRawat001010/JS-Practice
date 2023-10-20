@@ -214,7 +214,7 @@ function updateMealInfo(mealData) {
 
     dataHereMealInfo.appendChild(mealNewDiv);
 
-    popup.style.scale = "1"
+    popup.style.scale = "1";
 };
 
 
