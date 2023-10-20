@@ -173,7 +173,7 @@ searchBtn.addEventListener("click", async ()=> {
 
 closePopupBtn.addEventListener("click", ()=> {
     popup.style.scale = "0";
-})
+});
 
 
 function updateMealInfo(mealData) {
@@ -187,7 +187,7 @@ function updateMealInfo(mealData) {
         `;
 
     mealInfo.appendChild(mealNewDiv);
-}
+};
 
 
 
