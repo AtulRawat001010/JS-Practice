@@ -28,7 +28,7 @@ img{
 }
 
 header{
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,13 +73,13 @@ header #search{
     scroll-behavior: auto;
 }
 
-.fav-container h3.active{
+/* .fav-container h3.active{
     margin-top: -4px;
     width: 300px;
     position: fixed;
     z-index: 10;
     background-color:#669beb
-}
+} */
 
 .fav-meals{
     display: flex;
@@ -88,7 +88,7 @@ header #search{
     align-items: center;
     list-style-type: none;
     padding: 0;
-    margin-top: 35px;
+    margin-top: 6px;
 }
 
 .fav-meals li{
@@ -150,7 +150,7 @@ header #search{
 }
 
 .meal-header img{
-    height: 220px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
 }
@@ -176,4 +176,55 @@ header #search{
 
 .meal-body .fav-btn.active{
    color: black;
+}
+
+
+.meal-infoContainer{
+    position: fixed;
+    background-color: rbga(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    scale: 1;
+}
+
+.meal-info{
+    background-color: #fff;
+    padding: 1rem 2rem;
+    position: relative;
+    border-radius: 5px;
+    max-width: 400px;
+    max-height: 650px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.meal-info h1{
+   text-align: center;
+   margin-bottom: 1rem;
+}
+
+.meal-info p{
+   padding: 1rem 0 0 0;
+}
+
+.meal-info ul{
+   padding: 0.8rem 2rem;
+}
+
+.meal-infoContainer .close-popup{
+   background-color: transparent;
+   color: #000;
+   border: none;
+   cursor: pointer;
+   font-size: 1.5rem;
+   top: 0.5rem;
+   left: 20rem;
+   position: sticky;
 }

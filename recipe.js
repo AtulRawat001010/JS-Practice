@@ -4,11 +4,13 @@ let favMeals_containerH3 = document.querySelector("h3");
 let meals = document.querySelector("#meals");
 let inputField = document.querySelector("#inputField");
 let searchBtn = document.querySelector("#search");
+let popup = document.querySelector("#popup");
+let closePopupBtn = document.querySelector(".close-popup");
+let mealInfo = document.querySelector(".meal-info");
+
 
 getRandomMeal();
 fetchFavMeals();
-
-
 
 
 async function getRandomMeal(){
@@ -48,6 +50,7 @@ async function getMealBySearch(term){
 
 function addMeal(mealData, random = false) {
     const meal = document.createElement("div");
+
     meal.classList.add("meal");
 
     meal.innerHTML = 
@@ -78,6 +81,8 @@ function addMeal(mealData, random = false) {
         });
 
     meals.appendChild(meal);
+
+    updateMealInfo(mealData);
 };
 
 
@@ -129,28 +134,16 @@ async function fetchFavMeals() {
 function addMealToFav(mealData) {
 
     const favMeal = document.createElement("li");
+    
     const slicedMealName = mealData.strMeal;
-
     const newName = slicedMealName.split(" ");
-
+    
     favMeal.innerHTML = 
     `
-        <img src="${mealData.strMealThumb}" alt="${newName[0]}">
-        <span class="favMealNameSpan">${newName[0]}</span>
-        <button class="close"><i class='bx bx-window-close'></i></button>
+    <img id="listImg" src="${mealData.strMealThumb}" alt="${newName[0]}">
+    <span class="favMealNameSpan">${newName[0]}</span>
+    <button class="close"><i class='bx bx-window-close'></i></button>
     `;
-
-
-    favMeal.addEventListener("mouseenter", ()=> {
-        let favMealNameSpan = favMeal.querySelector(".favMealNameSpan");
-        favMealNameSpan.innerText = mealData.strMeal;
-    });
-
-    favMeal.addEventListener("mouseleave", ()=> {
-        let favMealNameSpan = favMeal.querySelector(".favMealNameSpan");
-        favMealNameSpan.innerText = newName[0];
-    });
-
 
     const closeBtn = favMeal.querySelector(".close");
 
@@ -165,6 +158,9 @@ function addMealToFav(mealData) {
 
 
 searchBtn.addEventListener("click", async ()=> {
+
+    meals.innerHTML = "";
+
     const search = inputField.value;
 
     const mealBySearch = await getMealBySearch(search);
@@ -175,30 +171,40 @@ searchBtn.addEventListener("click", async ()=> {
 });
 
 
-
-// 2:48:00;
-
-
-
+closePopupBtn.addEventListener("click", ()=> {
+    popup.style.scale = "0";
+})
 
 
+function updateMealInfo(mealData) {
+    let mealNewDiv = document.createElement("div");
+
+    mealNewDiv.innerHTML = 
+        `<h1 class="mealInfoH1">${mealData.strMeal}</h1>
+         <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+        
+         <p>${mealData.strInstructions}</p>
+        `;
+
+    mealInfo.appendChild(mealNewDiv);
+}
 
 
 
-let x = window.matchMedia("(max-height: 1500px), (max-width: 1500px)");
-myFunction(x);
-x.addEventListener("scroll", myFunction);
+// let x = window.matchMedia("(max-height: 1500px), (max-width: 1500px)");
+// myFunction(x);
+// x.addEventListener("scroll", myFunction);
 
-function myFunction(x) {
-    if (x.matches) { // If media query matches
-        window.onscroll = ()=>{
-            favMeals_containerH3.classList.remove("active");
-            favMeals_container.style.marginTop = "0";
-        }
-    }
+// function myFunction(x) {
+//     if (x.matches) { // If media query matches
+//         window.onscroll = ()=>{
+//             favMeals_containerH3.classList.remove("active");
+//             favMeals_container.style.marginTop = "0";
+//         }
+//     }
 
-    else{
-        favMeals_containerH3.classList.add("active");
-        favMeals_container.style.marginTop = "3500px";
-    }
-};
+//     else{
+//         favMeals_containerH3.classList.add("active");
+//         favMeals_container.style.marginTop = "3500px";
+//     }
+// };
