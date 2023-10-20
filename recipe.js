@@ -176,6 +176,9 @@ searchBtn.addEventListener("click", async ()=> {
 
 
 
+// 2:48:00;
+
+
 
 
 
@@ -198,4 +201,4 @@ function myFunction(x) {
         favMeals_containerH3.classList.add("active");
         favMeals_container.style.marginTop = "3500px";
     }
-}
+};
