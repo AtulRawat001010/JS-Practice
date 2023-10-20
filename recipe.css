@@ -89,6 +89,7 @@ header #search{
     list-style-type: none;
     padding: 0;
     margin-top: 6px;
+    cursor: pointer;
 }
 
 .fav-meals li{
@@ -134,6 +135,8 @@ header #search{
     margin: 1rem;
     border-radius: 3px;
     box-shadow: 0 0 10px 2px #3333331a;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .meal-header{
@@ -189,7 +192,7 @@ header #search{
     right: 0;
     top: 0;
     bottom: 0;
-    scale: 1;
+    scale: 0;
 }
 
 .meal-info{

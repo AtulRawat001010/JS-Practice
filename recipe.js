@@ -7,6 +7,7 @@ let searchBtn = document.querySelector("#search");
 let popup = document.querySelector("#popup");
 let closePopupBtn = document.querySelector(".close-popup");
 let mealInfo = document.querySelector(".meal-info");
+let dataHereMealInfo = document.querySelector(".dataHereMealInfo");
 
 
 getRandomMeal();
@@ -65,12 +66,12 @@ function addMeal(mealData, random = false) {
         </div>`;
 
         let fav_btn = meal.querySelector(".fav-btn");
-
         fav_btn.addEventListener("click", ()=>{
 
             if(fav_btn.classList.contains("active")){
                 removeMealsFromLS(mealData.idMeal);
                 fav_btn.classList.remove("active");
+                fetchFavMeals();
             }
             else{
                 addMealsToLS(mealData.idMeal);
@@ -80,9 +81,11 @@ function addMeal(mealData, random = false) {
             fetchFavMeals();
         });
 
-    meals.appendChild(meal);
+        meal.addEventListener("click", ()=> {
+            updateMealInfo(mealData);
+        });
 
-    updateMealInfo(mealData);
+    meals.appendChild(meal);
 };
 
 
@@ -154,6 +157,10 @@ function addMealToFav(mealData) {
     });
 
     favMeals_container.appendChild(favMeal);
+
+    favMeal.addEventListener("click", ()=> {
+        updateMealInfo(mealData);
+    });
 };
 
 
@@ -179,15 +186,49 @@ closePopupBtn.addEventListener("click", ()=> {
 function updateMealInfo(mealData) {
     let mealNewDiv = document.createElement("div");
 
+    const ingredient = [];
+    for (let i = 1; i < 20; i++) {
+        if(mealData[`strIngredient${i}`]){
+            ingredient.push(`
+                ${mealData[`strIngredient${i}`]} - ${mealData[`strMeasure${i}`]}
+            `);
+        }
+        else{
+            break;
+        }
+    }
+
+    dataHereMealInfo.innerHTML = "";
+
     mealNewDiv.innerHTML = 
         `<h1 class="mealInfoH1">${mealData.strMeal}</h1>
          <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
         
          <p>${mealData.strInstructions}</p>
+
+         <h3>Ingredients:</h3>
+         <ul>
+            ${ingredient.map((ing) => `<li>${ing}</li>`).join("")}
+         </ul>
         `;
 
-    mealInfo.appendChild(mealNewDiv);
+    dataHereMealInfo.appendChild(mealNewDiv);
+
+    popup.style.scale = "1";
 };
+
+
+
+//1. favorite button BUG
+//2. after search overflow Bug 
+//3. menu Button options
+//4. click on perticular target.(eg. favBtn clicked -> popup opening)
+
+
+//For Test==>
+// popup.onclick = ()=> {
+//     popup.style.scale = "0";
+// }
 
 
 
