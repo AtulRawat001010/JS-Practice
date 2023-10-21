@@ -8,13 +8,15 @@
 
 const prompt = require("prompt-sync")();
 
-main();
-
 const deposit = ()=> {
-    const depositAmount = prompt("Enter a deposit amount: ");
+    const depositAmount = prompt("Enter deposit: ");
 }
 
+ let a = 5;
+let res = a;
 
-function main() {
-    deposit();
-}
+let all = a + res;
+
+document.write(all);
+
+deposit();
