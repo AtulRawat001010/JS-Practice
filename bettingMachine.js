@@ -141,9 +141,9 @@ const getWinnigs = (rows, bet, lines)=> {
         }
 
         if(allSame){
-            winning = winning + bet * 3 + SYMBOL_VALUES[symbols[0]];
+            winning = winning + bet * lines + (SYMBOL_VALUES[symbols[0]] * lines);
 
-            console.log(`you Won $${winning}`);
+            console.log(`you Won $${SYMBOL_VALUES[symbols[0]]}`);
         }
     }
 
@@ -171,11 +171,11 @@ const game = ()=> {
         printRows(rows);
         let winnigs = getWinnigs(rows, bet, lines);
 
-        balance += winnigs;
+        // balance += winnigs;
 
-        console.log(`You Won $${winnigs}.`);
+        // console.log(`You Won $${winnigs}.`);
 
-        console.log(`You have $${winnigs}. remaining`);
+        console.log(`You have $${(balance + winnigs)}. remaining`);
 
 
         if (balance <= 0) {
