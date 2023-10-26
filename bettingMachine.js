@@ -175,7 +175,7 @@ const game = ()=> {
 
         console.log(`You Won $${winnigs}.`);
 
-        console.log(`You have $${balance += winnigs}. remaining`);
+        console.log(`You have $${winnigs}. remaining`);
 
 
         if (balance <= 0) {
