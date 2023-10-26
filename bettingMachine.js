@@ -125,7 +125,7 @@ const printRows = (rows)=> {
 
         console.log(rowString);
     }
-}
+};
 
 const getWinnigs = (rows, bet, lines)=> {
     let winning = 0;
@@ -148,7 +148,7 @@ const getWinnigs = (rows, bet, lines)=> {
     }
 
     return winning;
-}
+};
 
 
 
