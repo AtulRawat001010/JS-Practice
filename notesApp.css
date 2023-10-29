@@ -10,6 +10,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 3rem;
+    flex-wrap: wrap;
 }
 
 /* #notesApp{
@@ -43,6 +45,7 @@ body{
     margin: 20px;
     width: 400px;
     height: 400px;
+    margin-bottom: 5rem;
 }
 
 .note .tools{
@@ -62,13 +65,13 @@ body{
 }
 
 .note .main{
-    background-color: #fff;
+    background-color: #ebe1e1;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.note textarea{
+.note .textarea{
     outline: none;
     border: none;
     width: 100%;
