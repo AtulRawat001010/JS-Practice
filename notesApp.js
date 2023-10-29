@@ -52,7 +52,7 @@ function addNewNote(text = "") {
         note.remove();
 
         updateLS();
-    })
+    });
 
     textarea.addEventListener("input", (e) => {
         const { value } = e.target;
@@ -60,7 +60,7 @@ function addNewNote(text = "") {
         main.innerHTML = marked.parse(value);
 
         updateLS();
-    })
+    });
 };
 
 
@@ -72,8 +72,8 @@ function updateLS() {
     notesText.forEach(noteEl => {
         if(noteEl.value !== "" || null){
             notes.push(noteEl.value);
-        }
+        };
     });
 
     localStorage.setItem("notes", JSON.stringify(notes));
-}
+};
