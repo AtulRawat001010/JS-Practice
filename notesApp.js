@@ -46,12 +46,12 @@ function addNewNote(text = "") {
     editBtn.addEventListener("click", () => {
         main.classList.toggle("hidden");
         textarea.classList.toggle("hidden");
-    })
+    });
 
     deleteBtn.addEventListener("click", ()=> {
         note.remove();
 
-        updateLS()
+        updateLS();
     })
 
     textarea.addEventListener("input", (e) => {
