@@ -10,20 +10,18 @@ function addNewNote() {
     note.classList.add("note");
 
     note.innerHTML = `
-        <div id="notes" class="notes">
-            <div class="tools">
-                <button id="editBtn">
-                    <i class='bx bx-edit'></i>
-                </button>
+        <div class="tools">
+            <button id="editBtn">
+                <i class='bx bx-edit'></i>
+            </button>
 
-                <button id="deleteBtn">
-                    <i class='bx bxs-trash' ></i>
-                </button>
-            </div>
+            <button id="deleteBtn">
+                <i class='bx bxs-trash' ></i>
+            </button>
+        </div>
 
-            <div class="main hidden"></div>
-            <textarea name="textarea" id="textarea" cols="10" rows="20"></textarea>
-        </div>`;
+        <div class="main hidden"></div>
+        <textarea name="textarea" id="textarea" cols="10" rows="20"></textarea>`;
 
     document.body.appendChild(note);
 
@@ -47,7 +45,20 @@ function addNewNote() {
         const { value } = e.target;
 
         main.innerHTML = marked.parse(value);
+
+        updateLS();
     })
-
-
 };
+
+
+function updateLS() {
+    const notesText = document.querySelectorAll("#textarea");
+
+    const notes = [];
+
+    notesText.forEach(noteEl => {
+        notes.push(noteEl.value);
+    });
+
+    localStorage.setItem("notes", JSON.stringify(notes));
+}
