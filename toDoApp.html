@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo App</title>
     <link rel="stylesheet" href="toDoApp.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     
     <!-- <div id="todo-container"> -->
-        <h1 class="heading1">To-Dos</h1>
+        <h1 class="heading1">To-Dos 
+            <sup class="sup">
+                <i class='bx bxs-message-square-error supI'></i>
+
+                <ul id="supUl" class="hiddenUl">
+                    <li>&#8226;Mark Completed task By Left Click.</li>
+                    <li>&#8226;Delete a task By Right Click.</li>
+                </ul>
+            </sup>
+        </h1>
 
         <form id="form">
             <input id="input" type="text" placeholder="Enter Your Task." autocomplete="off">
 
-            <ul class="tasks" id="tasks">
-                <!-- <li class="list"></li> -->
-            </ul>
+            <ul class="tasks" id="tasks"></ul>
         </form>
     <!-- </div> -->
 
