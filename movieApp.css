@@ -106,6 +106,81 @@ header #search {
     transform: translateY(0);
 }
 
-@media screen {
-    
+@media (max-width:1200px) {
+    .movie{
+        width: 260px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+}
+@media (max-width:1100px) {
+    .movie{
+        width: 250px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width:1000px) {
+    .movie{
+        width: 230px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width:900px) {
+    .movie{
+        width: 200px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 1.2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .movie{
+        width: 180px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 0.5rem;
+    }
+}
+
+@media (max-width:500px) {
+    .movie{
+        width: 210px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width:400px) {
+    .movie{
+        width: 180px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width:300px) {
+    .movie{
+        width: 140px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        margin-left: 0.5rem;
+    }
 }
