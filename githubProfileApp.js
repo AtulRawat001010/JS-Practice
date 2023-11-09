@@ -45,7 +45,7 @@ function createUserCard(user) {
                     <li><i class='bx bxs-user'></i> <strong>${user.following}</strong> <strong>Following</strong></li>
                     <li><i class='bx bx-folder-open' ></i> <strong>${user.public_repos}</strong> <strong>Repos</strong></li>
                 </ul>
-                <div id = "repos">Repos: <br/><br/> </div>
+                <div id = "repos">${user.name ? "Repos:" : ""} <br/><br/> </div>
             </div>
         </div>
     `;
