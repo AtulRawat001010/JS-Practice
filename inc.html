@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="p">0</p>
+    <p id="savedData">Start Saving Data.</p>
+    <button id="inc_btn">increse</button>
+    <button id="dec_btn">decrese</button>
+    <button id="btn">Save Data</button>
+
+    <script>
+        const para = document.getElementById("p");
+        const savedData = document.getElementById("savedData");
+        const incBtn = document.getElementById("inc_btn");
+        const decBtn = document.getElementById("dec_btn");
+        const saveBtn = document.getElementById("btn");
+        const arr = [];
+
+        incBtn.addEventListener("click", increment);
+        decBtn.addEventListener("click", decrement);
+        saveBtn.addEventListener("click", saveData);
+
+
+        function increment() {
+            let paraData = Number(para.innerText);
+            let newData = paraData += 1;
+            para.innerText = newData;
+        }
+
+        function decrement() {
+            if (para.innerText > 0) {
+                let paraData = Number(para.innerText);
+                let newData = paraData -= 1;
+                para.innerText = newData;
+            }
+        }
+
+
+        function saveData() {
+            const thisData = para.innerText;
+
+            arr.push(thisData);
+            savedData.innerText = arr;
+
+            let arrStr = arr.toString();
+
+            savedData.innerText = arrStr.replaceAll("," , " | ");
+        };
+    </script>
+</body>
+</html>
